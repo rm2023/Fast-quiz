@@ -23,6 +23,7 @@ setTime();
 //Question BOX
 //variables for questions
 var questionE1 = document.querySelector("#question-holder");
+var YN =document.querySelector("#Q")
 var a1= document.querySelector("#a1")
 var a2= document.querySelector("#a2")
 var a3= document.querySelector("#a3")
@@ -54,9 +55,9 @@ var questions = [
 
 
 nextBtn.addEventListener("click", function () {
-  console.log(questions[currentQuestionIndex]);
+  
   if (questions[currentQuestionIndex] == undefined) {
-    console.log("help me");
+    
     questionE1.textContent = "game over";
 
   } else {
@@ -67,7 +68,42 @@ nextBtn.addEventListener("click", function () {
     a4.textContent = questions[currentQuestionIndex].answers[3];
     currentQuestionIndex++;
     
-
   }
-  //console.Log(currentQuestionIndex);
+});
+
+console.log(questions[currentQuestionIndex].correct);
+//clik button comparision
+a1.addEventListener("click", function () {
+ 
+  if (a1 == questions[currentQuestionIndex].correct) {
+    YN.textContent = "correct";
+  } else {
+    YN.textContent = "wrong";
+  }
+});
+
+a2.addEventListener("click", function () {
+ 
+  if (a2 == questions[currentQuestionIndex].correct) {
+    YN.textContent = "correct";
+  } else {
+    YN.textContent = "wrong";
+  }
+});
+a3.addEventListener("click", function () {
+ 
+  if (a3 == questions[currentQuestionIndex].correct) {
+    YN.textContent = "correct";
+  } else {
+    YN.textContent = "wrong";
+  }
+});
+
+a4.addEventListener("click", function () {
+ 
+  if (a4 == questions[currentQuestionIndex].correct) {
+    YN.textContent = "correct";
+  } else {
+    YN.textContent = "wrong";
+  }
 });
