@@ -30,7 +30,7 @@ var a3= document.querySelector("#a3")
 var a4= document.querySelector("#a4")
 
 var nextBtn = document.querySelector(".show-next");
-var currentQuestionIndex = 0;
+var currentQuestionIndex = -1;
 var questions = [
   {
     q: "Which company developed JavaScript?",
@@ -53,12 +53,13 @@ var questions = [
  
 ];
 
-console.log(a1);
+
 //clik button comparision
 a1.addEventListener("click", function () {
  
-  if (a1 == questions[currentQuestionIndex].correct) {
+  if (a1.textContent == questions[currentQuestionIndex].correct) {
     YN.textContent = "correct";
+    nextBtn.click();
   } else {
     YN.textContent = "wrong";
   }
@@ -67,16 +68,18 @@ a1.addEventListener("click", function () {
 
 a2.addEventListener("click", function () {
  
-  if (a2 == questions[currentQuestionIndex].correct) {
+  if (a2.textContent == questions[currentQuestionIndex].correct) {
     YN.textContent = "correct";
+    nextBtn.click();
   } else {
     YN.textContent = "wrong";
   }
 });
 a3.addEventListener("click", function () {
  
-  if (a3 == questions[currentQuestionIndex].correct) {
+  if (a3.textContent == questions[currentQuestionIndex].correct) {
     YN.textContent = "correct";
+    nextBtn.click();
   } else {
     YN.textContent = "wrong";
   }
@@ -84,15 +87,18 @@ a3.addEventListener("click", function () {
 
 a4.addEventListener("click", function () {
  
-  if (a4 == questions[currentQuestionIndex].correct) {
+  if (a4.textContent == questions[currentQuestionIndex].correct) {
     YN.textContent = "correct";
+    nextBtn.click();
+  
   } else {
     YN.textContent = "wrong";
   }
 });
 //next button
 nextBtn.addEventListener("click", function () {
-  
+  currentQuestionIndex++;
+  YN.textContent = "";
   if (questions[currentQuestionIndex] == undefined) {
     
     questionE1.textContent = "game over";
@@ -103,7 +109,7 @@ nextBtn.addEventListener("click", function () {
     a2.textContent = questions[currentQuestionIndex].answers[1];
     a3.textContent = questions[currentQuestionIndex].answers[2];
     a4.textContent = questions[currentQuestionIndex].answers[3];
-    currentQuestionIndex++;
+    
     
   }
 });
