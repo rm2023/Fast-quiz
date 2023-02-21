@@ -53,25 +53,7 @@ var questions = [
  
 ];
 
-
-nextBtn.addEventListener("click", function () {
-  
-  if (questions[currentQuestionIndex] == undefined) {
-    
-    questionE1.textContent = "game over";
-
-  } else {
-    questionE1.textContent = questions[currentQuestionIndex].q;
-    a1.textContent = questions[currentQuestionIndex].answers[0];
-    a2.textContent = questions[currentQuestionIndex].answers[1];
-    a3.textContent = questions[currentQuestionIndex].answers[2];
-    a4.textContent = questions[currentQuestionIndex].answers[3];
-    currentQuestionIndex++;
-    
-  }
-});
-
-console.log(questions[currentQuestionIndex].correct);
+console.log(a1);
 //clik button comparision
 a1.addEventListener("click", function () {
  
@@ -81,6 +63,7 @@ a1.addEventListener("click", function () {
     YN.textContent = "wrong";
   }
 });
+
 
 a2.addEventListener("click", function () {
  
@@ -107,3 +90,21 @@ a4.addEventListener("click", function () {
     YN.textContent = "wrong";
   }
 });
+//next button
+nextBtn.addEventListener("click", function () {
+  
+  if (questions[currentQuestionIndex] == undefined) {
+    
+    questionE1.textContent = "game over";
+
+  } else {
+    questionE1.textContent = questions[currentQuestionIndex].q;
+    a1.textContent = questions[currentQuestionIndex].answers[0];
+    a2.textContent = questions[currentQuestionIndex].answers[1];
+    a3.textContent = questions[currentQuestionIndex].answers[2];
+    a4.textContent = questions[currentQuestionIndex].answers[3];
+    currentQuestionIndex++;
+    
+  }
+});
+
