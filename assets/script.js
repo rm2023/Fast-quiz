@@ -1,6 +1,6 @@
 
 // variables for timer
-var timeEl = document.querySelector(".time");
+const timeEl = document.querySelector(".time");
 var secondsLeft = 30;
 var timerInterval
 //timer
